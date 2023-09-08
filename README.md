@@ -10,7 +10,9 @@ as shown in the diagram above, our plant includes both the robot and the human w
 
 # Detailed system Architecture
 The following diagram shows the system detailed architecture including the three main software modules and how they are connected with the rest of the parts in an abstract way that illustrates the data flow and sequence of operations:
+<br>
 ![img](Detailed_system_Architecture.png)
+<br>
 The software layer includes three main modules: vision, motion planning and control, and task planning modules. 
 The vision module is responsible for perceiving the environment and detecting the objects to be picked by the robot as well detecting the presence of humans inside the workspace in real time to ensure safety and collision avoidance as being key feature of the collaborative robot during operation. 
 The motion planning and control module is responsible for planning the robot path that is free from obstacles and then creating the appropriate trajectories between each waypoint on the path and controlling the motor movements.
@@ -18,9 +20,13 @@ The task planning module is responsible for receiving inputs from the operator o
 
 # Robot Prototype Specifications
 The following picture shows the 2DOF cobot prototype that was manufactured and implemented and its workspace setup including the camera, objects to be picked up, and the human presence:
+<br>
 ![img](prototype.png)
+<br>
 This image shows the 2 Degrees of freedom collaborative robot prototype that works collaboratively with human workers. The cobot can be programmed to pick components and place, while the human worker handles tasks that require dexterity, decision-making, and creativity such as soldering, testing, and inspection:
+<br>
 ![img](2dof_robot.png)
+<br>
 The system is equipped with an RGB camera that is mounted on top of the workspace and is used for object detection and localization. The camera gives live streams of the objects on the table, and the robot's vision system uses computer vision algorithms to analyze the live video and determine the location of the objects in real time. Once the location of the objects is determined, the cobot arm can be programmed to move to the location.
 To avoid obstacles and collisions with human workers, the cobot uses the same camera. The robot can detect humans in its environment and adjust its behavior accordingly to avoid collisions. This is the “safety-rated monitored stop” level of collaboration.
 The cobot will also be programmed to detect which item to pick from several items. 
