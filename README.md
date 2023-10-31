@@ -1,3 +1,12 @@
+# Table of contents
+
+- [COBOT Software demo videos](#cobot-software-demo-videos)
+- [collaborative robot arm project abstract](#collaborative-robot-arm-project-abstract)
+- [Conceptual High-Level Architecture](#conceptual-high-level-architecture)
+- [Detailed system Architecture](#detailed-system-architecture)
+- [Robot Prototype Specifications](#robot-prototype-specifications)
+- [conclusion & future work](#conclusion--future-work)
+
 # COBOT Software demo videos
 Youtube Playlist for COBOT software design visualization and demos: <a href="https://youtube.com/playlist?list=PLQGmVUnzENUIaLQQg4i21cSAdt_G9XioN&si=aPeZX_ui4Rt8g1dv" target="_blank">Playlist Link</a>
 
