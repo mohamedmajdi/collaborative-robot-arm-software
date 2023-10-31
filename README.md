@@ -1,10 +1,12 @@
 # Table of contents
 
+- [Table of contents](#table-of-contents)
 - [COBOT Software demo videos](#cobot-software-demo-videos)
 - [collaborative robot arm project abstract](#collaborative-robot-arm-project-abstract)
 - [Conceptual High-Level Architecture](#conceptual-high-level-architecture)
 - [Detailed system Architecture](#detailed-system-architecture)
 - [Robot Prototype Specifications](#robot-prototype-specifications)
+- [Code Files](#code-files)
 - [conclusion & future work](#conclusion--future-work)
 
 # COBOT Software demo videos
@@ -45,7 +47,13 @@ This image shows the 2 Degrees of freedom collaborative robot prototype that wor
 * The cobot can avoid static obstacles using path planning rrt algorithm and can control its speed using trajectory planning.
 
 # Code Files
-1. [main_code.py](main_code.py) : Contains python codes for GUI, image proceccing, object localization, feature-based object detection, YOLO-based human detection, AI vision-based interrupt, and python serial communication with microcontroller
+1. [main_code.py](main_code.py) : Contains python codes for GUI, image proceccing, object localization, feature-based object detection, YOLO-based human detection, AI vision-based interrupt, and python serial communication with microcontroller.
+2. [inverse_k_2D.py](inverse_k_2D.py) : Contains python codes for calculating the forward and inverse kinematics of the robot arm. The calculations in the file can be changed if another robot arm  is used. By this, we ensure the modularity of other parts of our software in the main_code.py file, which can be used without change with different robot arms.
+3. [Vision.py](Vision.py) : contain codes for adjusting parameters related to camera position with respect to the robot base and camera field of view.
+4.  [path_planning.py](path_planning.py) : contains codes that use the RRT sampling-based path planning algorithm to calculate collision-free waypoints for the robot arm.
+5.  [RRT.py](RRT.py) : Contains codes for the RRT path planning algorithm steps
+6.  [config_space.py](config_space.py) : contains codes for visualizing the configuration space of a robot arm
+7.  [serial_comm.ino](serial_comm.ino) : the file is uploaded on the microcontroller and contains codes for  trajectory generation, receiving data from python serial port, servo and stepper motors control, waypoints execution, and interrupt execution.
 
 # conclusion & future work
 * We successfully designed a collaborative robot manipulator for pick and place operations that include a safety rated monitored stop feature to comply with ISO/TS 15066 guidelines which is successfully achieved when the robot stops after detecting a human presence within the workspace and resume its motion after the human disappears. Therefore, the cobot can perceive its workspace, detect desired objects using vision-based control and avoid human collision using AI-based YOLO human detection system. Our cobot system enable user interactions through easy-to-use GUI. We also managed to plan our robot path using sampling-based path planning rrt method that find the shortest path free-of-obstacles from start to goal position while moving in a smoother and more controlled movements using cubic polynomial trajectory generation. Our modular software design allows for easy customization and adaptation to different cobot configurations or changing requirements.
